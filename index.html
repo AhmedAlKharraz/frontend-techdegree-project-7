@@ -1,70 +1,286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Loomi Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>Loomi Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="js/node_modules/chart.js/dist/Chart.js" />
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="header-container">
-                <h1>Loomi Admin</h1>
-                <div class="profile-section">
-                    <img class="notif-icon" src="icons/icon-bell.svg" alt="">
-                    <img class="profile-img" src="images/member-4.jpg" alt="Member Avatar">
-                    <h3 class="profle-name">Ahmed AlKharraz</h3>
-                </div>
-            </div>
-        </header>
-        <div class="sidebar">
-            <img src="icons/icon-dashboard.svg" alt="Dashboard">
-            <img src="icons/icon-members.svg" alt="Memers">
-            <img src="icons/icon-visits.svg" alt="Visits">
-            <img src="icons/icon-settings.svg" alt="Settings">
-        </div>
-        <main>
-            <div class="dashboard">
-                <div class="search-section">
-                    <div class="search-tab">
-                        <h5>Dashboard</h5>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" />
-                    </div>
-                </div>
-                <div class="dashboard-section">
+  <div class="wrapper">
+    <header>
+      <h1>Loomi Admin</h1>
+      <div class="profile">
+        <img class="notif-icon" src="icons/icon-bell.svg" alt="" />
+        <div class="vl"></div>
+        <img class="profile-img" src="images/member-4.jpg" alt="Member Avatar" />
+        <h3>Ahmed AlKharraz</h3>
+      </div>
+    </header>
 
-                </div>
-                <div class="daily-trafic-section">
-
-                </div>
-                <div class="mobile-users-section">
-
-                </div>
-                <div class="social-states-section">
-
-                </div>
-                <div class="new-members-section">
-
-                </div>
-                <div class="recent-activity-section">
-
-                </div>
-                <div class="message-user-section">
-
-                </div>
-                <div class="settings-section">
-
-                </div>
-            </div>
-        </main>
+    <div class="sidebar-nav">
+      <nav>
+        <ul class="ul-nav">
+          <li>
+            <a href=""><img width="30" height="30" src="icons/icon-dashboard.svg" alt="Dashboard" /></a>
+          </li>
+          <li>
+            <a href=""><img width="30" height="30" src="icons/icon-members.svg" alt="Memers" /></a>
+          </li>
+          <li>
+            <a href=""><img width="30" height="30" src="icons/icon-visits.svg" alt="Visits" /></a>
+          </li>
+          <li>
+            <a href=""><img width="30" height="30" src="icons/icon-settings.svg" alt="Settings" /></a>
+          </li>
+        </ul>
+      </nav>
     </div>
+    <div class="main-section">
+
+      <div class="search-section">
+        <div class="search-tab">
+          <h5>Dashboard</h5>
+        </div>
+        <div class="search-box">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" />
+        </div>
+      </div>
+
+      <div class="dashboard-section">
+        <div class="alert">
+          <div class="alert-text">
+            <h5>Alert</h5>
+            <h5>Main message for aler ekfjerl fkjerljf</h5>
+          </div>
+          <div class="alert-sign">
+            <img src="icons/remove-symbol.png" alt="" />
+          </div>
+        </div>
+
+        <div class="chart-section">
+          <div class="title-and-buttons">
+            <div class="traffic-title">
+              <h3>TRAFFIC</h3>
+            </div>
+            <div class="report-tabs">
+              <a href="">Hourly</a>
+              <a href="">Daily</a>
+              <a href="">Weekly</a>
+              <a href="">Monthly</a>
+            </div>
+          </div>
+
+          <div class="chart">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="daily-trafic-section">
+        <h3>DAILY TRAFFIC</h3>
+        <div class="daily-chart">
+          <canvas id="dailyTrafficChart"></canvas>
+        </div>
+      </div>
+
+      <div class="mobile-users-section">
+        <h3>MOBILE USERS</h3>
+        <div class="mobile-chart">
+          <canvas id="mobileUsersChart"></canvas>
+        </div>
+      </div>
+
+      <div class="social-states-section">
+        <h3>SOCIAL STATS</h3>
+        <div class="social-group">
+          <div class="social">
+            <div class="roundshape">
+              <img src="/icons/icon-twitter.svg" alt="">
+            </div>
+            <div class="social-texts">
+              <div class="social-name">
+                <h6>Twitter</h6>
+              </div>
+              <div class="social-numbers">
+                <h5>10,345</h5>
+              </div>
+            </div>
+          </div>
+          <div class="social">
+            <div class="roundshape">
+              <img src="/icons/icon-facebook.svg" alt="">
+            </div>
+            <div class="social-texts">
+              <div class="social-name">
+                <h6>Facebook</h6>
+              </div>
+              <div class="social-numbers">
+                <h5>8,739</h5>
+              </div>
+            </div>
+          </div>
+          <div class="social">
+            <div class="roundshape">
+              <img src="/icons/icon-google-plus.svg" alt="">
+            </div>
+            <div class="social-texts">
+              <div class="social-name">
+                <h6>Google+</h6>
+              </div>
+              <div class="social-numbers">
+                <h5>2,530</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-members-section">
+        <h3>NEW MEMBERS</h3>
+        <div class="new-members-group">
+          <div class="member-details">
+            <img src="/images/member-1.jpg" alt="">
+            <div class="member-name-email">
+              <p>Victoria Chambers</p>
+              <p>victoria.chambers@example.com</p>
+            </div>
+            <p>10/15/15</p>
+          </div>
+
+          <div class="member-details">
+            <img src="/images/member-2.jpg" alt="">
+            <div class="member-name-email">
+              <p>Dale Byrd</p>
+              <p>daly.byrd@example.com</p>
+            </div>
+            <p>10/15/15</p>
+          </div>
+
+          <div class="member-details">
+            <img src="/images/member-3.jpg" alt="">
+            <div class="member-name-email">
+              <p>Dawn Wood</p>
+              <p>dawn.wood@example.com</p>
+            </div>
+            <p>10/15/15</p>
+          </div>
+
+          <div class="member-details">
+            <img src="/images/member-4.jpg" alt="">
+            <div class="member-name-email">
+              <p>Dan Oliver</p>
+              <p>dan.oliver@example.com</p>
+            </div>
+            <p>10/15/15</p>
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="recent-activity-section">
+        <h3>RECENT ACITITVY</h3>
+        <div class="recent-activity-group">
+
+          <div class="activity-details">
+            <img src="/images/member-4.jpg" alt="">
+            <div class="member-activity">
+              <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+              <p>4 hours ago</p>
+            </div>
+            <img src="/icons/free black left arrow icon png vector.png" alt="">
+          </div>
+
+          <div class="activity-details">
+            <img src="/images/member-4.jpg" alt="">
+            <div class="member-activity">
+              <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+              <p>4 hours ago</p>
+            </div>
+            <img src="/icons/free black left arrow icon png vector.png" alt="">
+          </div>
+
+          <div class="activity-details">
+            <img src="/images/member-4.jpg" alt="">
+            <div class="member-activity">
+              <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+              <p>4 hours ago</p>
+            </div>
+            <img src="/icons/free black left arrow icon png vector.png" alt="">
+          </div>
+
+          <div class="activity-details">
+            <img src="/images/member-4.jpg" alt="">
+            <div class="member-activity">
+              <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+              <p>4 hours ago</p>
+            </div>
+            <img src="/icons/free black left arrow icon png vector.png" alt="">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="message-user-section">
+        <h3>MESSAGE GROUP</h3>
+        <div class="message-user-group">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for User" />
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message for User"></textarea>
+          <button>SEND</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>SETTINGS</h3>
+        <div class="settings-group">
+
+          <div class="items">
+            <p>Send Email Notifications</p>
+            <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="myonoffswitch1" tabindex="0"
+                checked>
+              <label class="onoffswitch-label" for="myonoffswitch1">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="items">
+            <p>Set profile to public</p>
+            <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch2" tabindex="0"
+                checked>
+              <label class="onoffswitch-label" for="myonoffswitch2">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <input type="dropdown" name="" id="">
+        </div>
+
+        <div class="buttons">
+          <button>SAVE</button>
+          <button>CANCEL</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="js/node_modules/chart.js/dist/Chart.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
