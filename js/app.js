@@ -1,139 +1,161 @@
-var ctx = document.getElementById("myChart").getContext("2d");
-var myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [{
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-      lineTension: 0,
-    }, ],
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-      }, ],
-    },
+const trafficCanvas = document.getElementById('trafficChart');
 
+//Traffic Data
+let monthlyTrafficData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+        "4-10", "11-17", "18-24", "25-31"
+    ],
+    datasets: [{
+        data: [300, 1250, 2500, 2000, 1500, 1750, 2650, 1850, 2250, 1700,
+            1500
+        ],
+        backgroundColor: 'rgba(24, 103, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
+const trafficOptions = {
+    aspectRatio: 2.5,
+
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
     legend: {
-      display: false,
+        display: false
     }
-  },
+};
+
+const weeklyTrafficData = {
+    labels: ['Sun, 16', 'Mon, 17', 'Tues, 18', 'Wed, 19', 'Thurs, 20', 'Fri, 21', 'Sat, 22'],
+    datasets: [{
+        label: '# of hits',
+        data: [20, 40, 75, 45, 200, 100, 150],
+        backgroundColor: 'rgba(24, 103, 191, .3)',
+        borderWidth: 1
+    }]
+}
+
+const dailyTrafficData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [30, 200, 175, 150, 125, 200, 50],
+        backgroundColor: 'rgba(115, 119, 191, 1)',
+        borderWidth: 1
+    }]
+};
+
+const hourlyTrafficData = {
+    labels: [
+        '24:00',
+        '1:00',
+        '2:00',
+        '3:00',
+        '4:00',
+        '5:00',
+        '6:00',
+        '7:00',
+        '8:00',
+        '9:00',
+        '10:00',
+        '11:00',
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+        '23:00'
+    ],
+    datasets: [{
+        label: '# of hits',
+        data: [2, 1, 2, 3, 2, 5, 5, 4, 6, 10, 2, 3, 4, 1, 2, 4, 4, 4, 4, 1, 2, 3, 1, 1],
+        backgroundColor: 'rgba(24, 103, 191, .3)',
+        borderWidth: 1
+    }]
+};
+
+
+
+//Daily Data
+const dailyCanvas = document.getElementById("dailyTrafficChart");
+
+const dailyData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#7377bf',
+        borderWidth: 1
+    }]
+};
+
+const dailyOptions = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
+    legend: {
+        display: false
+    }
+}
+
+//Mobile Data
+const mobileCanvas = document.getElementById("mobileUsersChart");
+
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of Users',
+        data: [1500, 800, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7377bf',
+            '#81c98f',
+            '#74b1bf'
+        ]
+    }]
+};
+
+const mobileOptions = {
+    legend: {
+        position: 'right',
+        labels: {
+            boxWidth: 10,
+            fontStyle: 'bold'
+        }
+    }
+}
+
+//Create Traffic Chart
+let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: weeklyTrafficData,
+    options: trafficOptions
 });
 
-
-
-
-
-
-
-
-
-
-var ctx = document.getElementById("dailyTrafficChart").getContext("2d");
-var myChart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [{
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-      lineTension: 0,
-    }, ],
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-      }, ],
-    },
-
-    legend: {
-      display: false,
-    }
-  },
+//Creates Daily Chart
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
 });
 
-
-
-
-
-
-var ctx = document.getElementById("mobileUsersChart").getContext("2d");
-var myChart = new Chart(ctx, {
-  type: "doughnut",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [{
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-      lineTension: 0,
-    }, ],
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-      }, ],
-    },
-
-    legend: {
-      display: false,
-    }
-  },
+//Create Mobile Chart
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
 });

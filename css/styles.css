@@ -218,20 +218,24 @@ header .profile {
   padding: 5px 10px;
   text-decoration: none;
   margin-right: 3px;
+  color: #8f8f8f;
+  font-size: 1.4rem;
+}
+
+.report-tabs .selected {
   background-color: #81c98f;
   color: white;
   border-radius: 50px;
-  font-size: 1.4rem;
 }
 
 .chart {
   padding-top: 10px;
-  width: 100vw;
+  width: 90vw;
 }
 
 .chart::after {
   content: "";
-  width: 100%;
+  width: 90%;
   height: 1px;
   background-color: #d8d8d8;
   position: absolute;
@@ -662,13 +666,113 @@ header .profile {
   right: 0px;
 }
 
-@media (min-width: ​768px​) {
+@media (min-width: 768px) {
   .wrapper {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 100px 1fr;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 70px 1fr;
     grid-template-areas:
-      "head",
+      "head head"
       "pageNav mainContent";
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+  }
+
+  header .profile {
+    padding-top: 0;
+    margin-left: auto;
+  }
+
+  .ul-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .ul-nav li {
+    width: 90px;
+    height: 60px;
+    margin-top: 20px;
+  }
+
+  .ul-nav li::after {
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    /* end important */
+    border-radius: 0 10px 10px 0;
+  }
+
+  .title-and-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .report-tabs {
+    margin-left: auto;
+  }
+
+  #trafficChart {
+    width: 90%;
+  }
+
+  .main-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "search search"
+      "traffic traffic"
+      "daily mobile"
+      "social social"
+      "new-members activity"
+      "message-user setting";
+  }
+
+  .search-section {
+    grid-area: search;
+  }
+
+  .dashboard-section {
+    grid-area: traffic;
+  }
+
+  .daily-trafic-section {
+    grid-area: daily;
+  }
+
+  .mobile-users-section {
+    grid-area: mobile;
+  }
+
+  .social-states-section {
+    grid-area: social;
+  }
+
+  .new-members-section {
+    grid-area: new-members;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recent-activity-section {
+    grid-area: activity;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .message-user-section {
+    grid-area: message-user;
+
+  }
+
+  .settings-section {
+    grid-area: setting;
   }
 
 }
