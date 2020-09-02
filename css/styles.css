@@ -25,6 +25,23 @@
     "mainContent";
 }
 
+.dashboard-section,
+.daily-trafic-section,
+.mobile-users-section,
+.social-states-section,
+.new-members-section,
+.recent-activity-section,
+.message-user-section,
+.settings-section {
+  padding: 20px 10px;
+  border-bottom: #d8d8d8 1px solid;
+}
+
+h3 {
+  font-size: 1.4rem;
+  padding-bottom: 20px;
+}
+
 /* ================================= 
   Main Layout Styles
 ==================================== */
@@ -65,6 +82,16 @@ header .profile {
   margin-right: 10px;
 }
 
+.profile .notif-icon::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: relative;
+  right: 0;
+  top: 0;
+  background: chartreuse;
+}
+
 .profile .profile-img {
   width: 40px;
   height: 40px;
@@ -75,7 +102,7 @@ header .profile {
 }
 
 .profile h3 {
-  margin: auto 0;
+  padding-top: 20px;
   font-size: 1.5rem;
   padding-left: 10px;
 }
@@ -104,7 +131,7 @@ header .profile {
   align-items: center;
 }
 
-.ul-nav li::after {
+.ul-nav li.selected::after {
   content: "";
   /* this is important */
   position: absolute;
@@ -161,7 +188,8 @@ header .profile {
 
 .dashboard-section {
   grid-area: mainContent;
-  padding: 0 10px;
+  padding: 10px 20px;
+
 }
 
 /* ---- Alert Div ---------- */
@@ -189,8 +217,13 @@ header .profile {
 }
 
 .alert-text h5:first-child {
-  padding-right: 5px;
+  padding-right: 10px;
   font-weight: bold;
+}
+
+.alert-text p {
+  margin: auto;
+  font-size: 1.2rem;
 }
 
 /* ---- Alert Div -> Cross sign ---------- */
@@ -201,14 +234,17 @@ header .profile {
 
 /* ---- CHART Section ---------- */
 .chart-section {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
+/*
 .traffic-title h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
+*/
 
 .report-tabs {
   padding: 10px 0;
@@ -229,37 +265,46 @@ header .profile {
 }
 
 .chart {
-  padding-top: 10px;
-  width: 90vw;
+  padding-top: 30px;
+  width: 100vw;
+  height: 300px;
+
 }
 
-.chart::after {
+/*
+.dashboard-section::after {
   content: "";
-  width: 90%;
+  width: 100%;
   height: 1px;
   background-color: #d8d8d8;
   position: absolute;
   margin: 15px -10px;
 }
-
+*/
 /* ---- DAILY TRAFFIC CHART Section ---------- */
 .daily-trafic-section {
-  padding: 20px 10px;
+  /*padding: 20px 10px;*/
   display: flex;
   flex-direction: column;
+  /*border-bottom: #d8d8d8 1px solid;*/
+
 }
 
+/*
 .daily-trafic-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
+*/
 
 .daily-chart {
   padding-top: 10px;
-  width: 100vw;
+  position: relative;
+  width: 95vw;
 }
 
-.daily-chart::after {
+/*
+.daily-trafic-section::after {
   content: "";
   width: 100%;
   height: 1px;
@@ -267,25 +312,33 @@ header .profile {
   position: absolute;
   margin: 15px -10px;
 }
+*/
 
 /* ---- MOBILE USERS CHART Section ---------- */
 .mobile-users-section {
-  padding: 20px 10px;
+  /*padding: 20px 10px;*/
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  /*border-bottom: #d8d8d8 1px solid;*/
+
 }
 
+/*
 .mobile-users-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
+*/
 
 .mobile-chart {
   padding-top: 10px;
-  width: 100vw;
+  position: relative;
+  width: 95vw;
 }
 
-.mobile-chart::after {
+/*
+.mobile-users-section::after {
   content: "";
   width: 100%;
   height: 1px;
@@ -293,13 +346,19 @@ header .profile {
   position: absolute;
   margin: 15px -10px;
 }
-
+*/
 /* ============== Social Stats Section ============== */
 
+.social-states-section {
+  /*border-bottom: #d8d8d8 1px solid;*/
+}
+
+/*
 .social-states-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
+*/
 
 .social-group {
   display: grid;
@@ -354,6 +413,7 @@ header .profile {
   fill: white;
 }
 
+/*
 .social-states-section::after {
   content: "";
   width: 100%;
@@ -362,18 +422,21 @@ header .profile {
   position: absolute;
   margin-top: 15px;
 }
-
+*/
 /* ============== New Members Section ============== */
 
 .new-members-section {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
+  /*border-bottom: #d8d8d8 1px solid;*/
+
 }
 
+/*
 .new-members-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
-
+*/
 .new-members-group {
   display: flex;
   flex-direction: column;
@@ -383,10 +446,19 @@ header .profile {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 0;
+  margin-left: 0 15px;
   color: #696969;
+
+
 }
 
+.member-details:not(:last-child) {
+  border-bottom: 1px #e9e9e9 solid;
+
+}
+
+/*
 .member-details:not(:last-child)::after {
   content: "";
   width: calc(100% - 30px);
@@ -395,6 +467,7 @@ header .profile {
   margin-top: 50px;
   background-color: #e9e9e9;
 }
+*/
 
 .member-details p:nth-child(2) {
   color: #7679c0;
@@ -411,6 +484,7 @@ header .profile {
   margin-right: 10px;
 }
 
+/*
 .new-members-section::after {
   content: "";
   width: 100%;
@@ -419,18 +493,21 @@ header .profile {
   position: absolute;
   margin-top: 15px;
 }
-
+*/
 /* ============== Recent Activity Section ============== */
 
 .recent-activity-section {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
+  /*border-bottom: #d8d8d8 1px solid;*/
+
 }
 
+/*
 .recent-activity-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
-
+*/
 .recent-activity-group {
   display: flex;
   flex-direction: column;
@@ -440,10 +517,13 @@ header .profile {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 0;
+  margin: 0 15px;
   color: #696969;
+
 }
 
+/* for the arrow */
 .activity-details img:nth-child(1) {
   width: 30px;
   height: 30px;
@@ -451,6 +531,12 @@ header .profile {
   margin-right: 10px;
 }
 
+.activity-details:not(:last-child) {
+  border-bottom: 1px #e9e9e9 solid;
+
+}
+
+/*
 .activity-details:not(:last-child)::after {
   content: "";
   width: calc(100% - 30px);
@@ -459,11 +545,12 @@ header .profile {
   margin-top: 50px;
   background-color: #e9e9e9;
 }
-
+*/
 .member-activity {
   flex: 1;
 }
 
+/*
 .recent-activity-section::after {
   content: "";
   width: 100%;
@@ -472,18 +559,21 @@ header .profile {
   position: absolute;
   margin-top: 15px;
 }
-
+*/
 /* ============== Message User Section ============== */
 
 .message-user-section {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
+  /*border-bottom: #d8d8d8 1px solid;*/
+
 }
 
+/*
 .message-user-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
-
+*/
 .message-user-group {
   display: flex;
   flex-direction: column;
@@ -514,6 +604,7 @@ header .profile {
   border: 1px;
 }
 
+/*
 .message-user-section::after {
   content: "";
   width: 100%;
@@ -522,20 +613,21 @@ header .profile {
   position: absolute;
   margin-top: 15px;
 }
-
+*/
 /* ============== Settings Section ============== */
 
 .settings-section {
-  margin-top: 30px;
+  /* margin-top: 30px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 10px; */
 }
 
+/*
 .settings-section h3 {
   padding: 10px 0;
   font-size: 1.4rem;
 }
-
+*/
 .settings-group {
   display: flex;
   flex-direction: column;
@@ -698,13 +790,17 @@ header .profile {
     margin-top: 20px;
   }
 
-  .ul-nav li::after {
+  .ul-nav li.selected::after {
     bottom: 0;
     left: 0;
     width: 4px;
     height: 100%;
     /* end important */
     border-radius: 0 10px 10px 0;
+  }
+
+  .search-box input {
+    width: 350px;
   }
 
   .title-and-buttons {
@@ -720,11 +816,12 @@ header .profile {
     width: 90%;
   }
 
+
   .main-section {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 450px 350px 200px 280px 350px;
     grid-template-areas:
       "search search"
       "traffic traffic"
@@ -736,6 +833,7 @@ header .profile {
 
   .search-section {
     grid-area: search;
+
   }
 
   .dashboard-section {
@@ -744,6 +842,8 @@ header .profile {
 
   .daily-trafic-section {
     grid-area: daily;
+    border-right: #d8d8d8 1px solid;
+
   }
 
   .mobile-users-section {
@@ -756,6 +856,7 @@ header .profile {
 
   .new-members-section {
     grid-area: new-members;
+    border-right: #d8d8d8 1px solid;
     display: flex;
     flex-direction: column;
   }
@@ -768,11 +869,31 @@ header .profile {
 
   .message-user-section {
     grid-area: message-user;
+    border-right: #d8d8d8 1px solid;
 
   }
 
   .settings-section {
     grid-area: setting;
+  }
+
+  .dropdown input {
+    margin: 17px 0;
+  }
+
+  .buttons {
+    margin
+  }
+
+  /* ============== Charts ============== */
+  .daily-chart {
+    width: 40vw;
+    height: 60vh;
+  }
+
+  .mobile-chart {
+    width: 40vw;
+    height: 40vh;
   }
 
 }

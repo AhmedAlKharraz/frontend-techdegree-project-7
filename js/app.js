@@ -15,8 +15,8 @@ let monthlyTrafficData = {
 };
 
 const trafficOptions = {
-    aspectRatio: 2.5,
-
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
         yAxes: [{
             ticks: {
@@ -100,6 +100,8 @@ const dailyData = {
 };
 
 const dailyOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
         yAxes: [{
             ticks: {
@@ -130,6 +132,8 @@ const mobileData = {
 };
 
 const mobileOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     legend: {
         position: 'right',
         labels: {
@@ -158,4 +162,44 @@ let mobileChart = new Chart(mobileCanvas, {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions
+});
+
+//////////////////////////////alert////////////////////////////////////
+
+const alertBanner = document.getElementById("alert");
+
+alertBanner.innerHTML =
+    `<div class="alert-text">
+    <h5>Alert</h5>
+    <p>Main message for aler ekfjerl fkjerljf</p>
+  </div>
+  <div class="alert-sign">
+  <img class="alert-x" src="icons/remove-symbol.png" alt="" />
+  </div>`;
+
+alertBanner.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("alert-x")) {
+        alertBanner.style.display = "none";
+    }
+});
+
+
+////////////////////////////messaging/////////////////////////////////////
+
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+send.addEventListener('click', () => {
+    // ensure user and message fields are filled out 
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "") {
+        alert("Please fill out user field before sending");
+    } else if (message.value === "") {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully sent to: ${user.value}`);
+    }
 });

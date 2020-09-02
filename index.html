@@ -26,7 +26,7 @@
     <div class="sidebar-nav">
       <nav>
         <ul class="ul-nav">
-          <li>
+          <li class="selected">
             <a href=""><img width="30" height="30" src="icons/icon-dashboard.svg" alt="Dashboard" /></a>
           </li>
           <li>
@@ -48,19 +48,19 @@
           <h5>Dashboard</h5>
         </div>
         <div class="search-box">
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" />
+          <input type="text" id="myInput" placeholder="Search" />
         </div>
       </div>
 
       <div class="dashboard-section">
-        <div class="alert">
-          <div class="alert-text">
+        <div class="alert" id="alert">
+          <!-- <div class="alert-text">
             <h5>Alert</h5>
             <h5>Main message for aler ekfjerl fkjerljf</h5>
           </div>
           <div class="alert-sign">
-            <img src="icons/remove-symbol.png" alt="" />
-          </div>
+            <img class="alert-x" src="icons/remove-symbol.png" alt="" />
+          </div> -->
         </div>
 
         <div class="chart-section">
@@ -231,9 +231,9 @@
       <div class="message-user-section">
         <h3>MESSAGE GROUP</h3>
         <div class="message-user-group">
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for User" />
-          <textarea name="" id="" cols="30" rows="10" placeholder="Message for User"></textarea>
-          <button>SEND</button>
+          <input type="text" id="userField" onkeyup="myFunction()" placeholder="Search for User" />
+          <textarea name="" id="messageField" cols="30" rows="10" placeholder="Message for User"></textarea>
+          <button id="send">SEND</button>
         </div>
       </div>
 
