@@ -82,14 +82,19 @@ header .profile {
   margin-right: 10px;
 }
 
-.profile .notif-icon::after {
-  content: "";
-  height: 10px;
-  width: 10px;
+.profile .notif-icon:hover {
+  transform: rotateY(360deg);
+  transition: .5s;
+}
+
+.profile .alert-notif {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
   position: relative;
-  right: 0;
-  top: 0;
-  background: chartreuse;
+  left: 28px;
+  top: 6px;
+  background: #85db81;
 }
 
 .profile .profile-img {
@@ -650,7 +655,7 @@ header .profile {
   width: 170px;
 }
 
-.dropdown input {
+.dropdown select {
   border-radius: 5px;
   height: 35px;
   width: 100%;
@@ -659,6 +664,7 @@ header .profile {
   margin-bottom: 15px;
   border: 1px solid #d1d1d1;
   background-color: #fbfbfb;
+  color: #4d4c72;
 }
 
 .buttons {
@@ -812,9 +818,27 @@ header .profile {
     margin-left: auto;
   }
 
+
+
+
+  /* ============== Charts ============== */
+  .daily-chart {
+    width: 85vw;
+    height: 60vh;
+  }
+
+  .mobile-chart {
+    width: 80vw;
+    height: 40vh;
+  }
+
   #trafficChart {
     width: 90%;
   }
+
+}
+
+@media only screen and (min-width: 1024px) {
 
 
   .main-section {
@@ -882,7 +906,7 @@ header .profile {
   }
 
   .buttons {
-    margin
+    margin-top: 20px;
   }
 
   /* ============== Charts ============== */
@@ -894,6 +918,10 @@ header .profile {
   .mobile-chart {
     width: 40vw;
     height: 40vh;
+  }
+
+  #trafficChart {
+    width: 90%;
   }
 
 }
